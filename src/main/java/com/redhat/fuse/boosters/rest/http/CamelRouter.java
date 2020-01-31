@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * A simple Camel REST DSL route that implements the arrivals service.
- * 
+ * This is cp test from node script
  */
 @Component
 public class CamelRouter extends RouteBuilder {
@@ -57,11 +57,11 @@ public class CamelRouter extends RouteBuilder {
 
             //
             // COMMENT OUT THIS
-            .to("direct:arrivalsImplLocal", "direct:departuresImplLocal");
+            //.to("direct:arrivalsImplLocal", "direct:departuresImplLocal");
 
             //
             // UNCOMMENT THIS
-            //.to("direct:arrivalsImplRemote", "direct:departuresImplRemote");
+            .to("direct:arrivalsImplRemote", "direct:departuresImplRemote");
     
         from("direct:arrivalsImplRemote").description("Arrivals REST service implementation route")
             .streamCaching()
